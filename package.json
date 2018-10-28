@@ -1,0 +1,33 @@
+{
+  "name": "doodoo-demo",
+  "version": "1.0.0",
+  "description": "",
+  "main": "app.js",
+  "scripts": {
+    "web:dev": "nuxt",
+    "web:build": "nuxt build",
+    "web:generate": "nuxt generate",
+    "dev": "cross-env NODE_ENV=development NUXT_BUILD=true node app.js",
+    "api:dev": "cross-env NODE_ENV=development node app.js",
+    "api:docker": "cross-env NODE_ENV=docker node app.js"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "@nuxtjs/axios": "^5.3.3",
+    "babel-eslint": "^10.0.1",
+    "cross-env": "^5.2.0",
+    "doodoo.js": "^1.1.1",
+    "dotenv": "^6.1.0",
+    "element-ui": "^2.4.9",
+    "eslint-plugin-vue": "^4.7.1",
+    "glob": "^7.1.3",
+    "nuxt": "^2.2.0",
+    "yn": "^2.0.0"
+  },
+  "devDependencies": {
+    "eslint": "^5.7.0",
+    "eslint-loader": "^2.1.1"
+  }
+}
