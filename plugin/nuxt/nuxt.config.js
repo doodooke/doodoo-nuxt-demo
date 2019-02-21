@@ -1,16 +1,28 @@
-const glob = require("glob");
+/**
+ * 临时兼容
+ */
 const path = require("path");
-const { Utils } = require("nuxt");
+if (process.cwd() === __dirname) {
+    process.chdir(path.resolve(__dirname, "./../../"));
+}
+
 const fs = require("fs");
+const { relativeTo } = require("@nuxt/common");
+const glob = require("glob");
 const _url = require("url");
 const dotenv = require("dotenv");
+const env = Object.assign({}, process.env);
 const apiConfig = dotenv.parse(fs.readFileSync(".env"));
-const webConfig = Object.assign(dotenv.parse(fs.readFileSync(".env.web")), {
-    APP_HOST: apiConfig.APP_HOST,
-    APP_PREFIX: apiConfig.APP_PREFIX,
-    DOMAIN: _url.parse(apiConfig.APP_HOST).host,
-    API_DOMAIN: apiConfig.APP_HOST + apiConfig.APP_PREFIX
-});
+const webConfig = Object.assign(
+    dotenv.parse(fs.readFileSync(".env.web")),
+    {
+        APP_HOST: apiConfig.APP_HOST,
+        APP_PREFIX: apiConfig.APP_PREFIX,
+        DOMAIN: _url.parse(apiConfig.APP_HOST).host,
+        API_DOMAIN: apiConfig.APP_HOST + apiConfig.APP_PREFIX
+    },
+    env
+);
 const appDir = "app";
 
 function createRoutes(srcDir) {
@@ -47,8 +59,8 @@ function createLayouts() {
                 .basename(layouts[key])
                 .replace(/\\/g, "/")
                 .replace(/.vue$/, "")
-        ] = Utils.relativeTo(
-            path.resolve(".nuxt"),
+        ] = relativeTo(
+            path.resolve(__dirname, ".nuxt"),
             path.resolve(appDir, layouts[key])
         );
     }
@@ -57,9 +69,9 @@ function createLayouts() {
 }
 
 module.exports = {
-    env: webConfig,
+    rootDir: "plugin/web",
 
-    srcDir: "web",
+    env: webConfig,
 
     layouts: createLayouts(),
 
