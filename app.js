@@ -5,5 +5,5 @@ require("doodoo-plugin-dotenv");
 
 const app = new Doodoo();
 app.plugin("static");
-app.plugin("nuxt");
+app.plugin("web");
 app.start();

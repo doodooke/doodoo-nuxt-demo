@@ -7,7 +7,7 @@ if (process.cwd() === __dirname) {
 }
 
 const fs = require("fs");
-const { relativeTo } = require("@nuxt/common");
+const { relativeTo } = require("@nuxt/utils");
 const glob = require("glob");
 const _url = require("url");
 const dotenv = require("dotenv");
@@ -161,7 +161,7 @@ module.exports = {
     css: [],
 
     plugins: [
-        { src: "./web/plugins/element.js", ssr: true },
-        { src: "./web/plugins/axios.js", ssr: true }
+        { src: "~/plugins/element.js", ssr: true },
+        { src: "~/plugins/axios.js", ssr: true }
     ]
 };

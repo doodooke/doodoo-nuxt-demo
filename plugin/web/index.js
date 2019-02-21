@@ -3,7 +3,7 @@ const yn = require("yn");
 const isDev = (process.env.NODE_ENV || "development") === "development";
 
 // 用指定的配置对象实例化 Nuxt.js
-const config = require("./../../nuxt.config");
+const config = require("./nuxt.config");
 const nuxt = new Nuxt(Object.assign(config, { dev: isDev }));
 
 module.exports = () => {
