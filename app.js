@@ -4,6 +4,11 @@ const Doodoo = require("doodoo.js");
 require("doodoo-plugin-dotenv");
 
 const app = new Doodoo();
+
+if (app.env === "development") {
+    app.plugin("chokidar");
+}
 app.plugin("static");
 app.plugin("web");
+
 app.start();

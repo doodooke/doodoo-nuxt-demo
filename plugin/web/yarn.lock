@@ -6815,3 +6815,8 @@ yallist@^3.0.0, yallist@^3.0.2:
   version "3.0.3"
   resolved "http://registry.npm.taobao.org/yallist/download/yallist-3.0.3.tgz#b4b049e314be545e3ce802236d6cd22cd91c3de9"
   integrity sha1-tLBJ4xS+VF486AIjbWzSLNkcPek=
+
+yn@^3.1.0:
+  version "3.1.0"
+  resolved "http://registry.npm.taobao.org/yn/download/yn-3.1.0.tgz#fcbe2db63610361afcc5eb9e0ac91e976d046114"
+  integrity sha1-/L4ttjYQNhr8xeueCskel20EYRQ=
