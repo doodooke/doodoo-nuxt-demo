@@ -17,8 +17,12 @@
 import Logo from "./../component/logo.vue";
 export default {
     components: {
-        Logo,
-        title: ""
+        Logo
+    },
+    data() {
+        return {
+            title: ""
+        }
     },
     async asyncData({ app }) {
         const data = {};

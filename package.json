@@ -15,12 +15,15 @@
   "author": "",
   "license": "ISC",
   "dependencies": {
+    "cross-env": "^5.2.0",
     "doodoo-plugin-chokidar": "^1.0.1",
     "doodoo-plugin-dotenv": "^1.0.3",
     "doodoo.js": "^2.0.1-alpha.15"
   },
   "devDependencies": {
+    "babel-eslint": "^10.0.1",
     "eslint": "^5.7.0",
-    "eslint-loader": "^2.1.1"
+    "eslint-loader": "^2.1.1",
+    "eslint-plugin-vue": "^5.2.2"
   }
 }
